@@ -17,9 +17,7 @@ export default function Weather() {
             className="formControl"
           />
           <input type="submit" value="Check" />
-          <button type="button" value>
-            📍
-          </button>
+          <button type="button">📍</button>
         </form>
         <br />
         <div className="row">
