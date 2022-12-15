@@ -9,7 +9,9 @@ function App() {
           This app was coded by Kaja Królikowska, and is open-sourced on{" "}
           <a href="https://github.com/kajakrolikowska/fp-react-weather-app">
             GitHub
-          </a>
+          </a>{" "}
+          and hosted on{" "}
+          <a href="https://tourmaline-lebkuchen-5df301.netlify.app/">Netlify</a>
           .
         </p>
       </div>
