@@ -1,0 +1,59 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  color: #41153082;
+  background-color: #41153028;
+}
+footer {
+  font-size: 11px;
+  padding: 5px 0;
+}
+
+h1 {
+  font-size: 28px;
+  text-align: right;
+}
+.noPadding {
+  padding: 0;
+}
+.Temperature h1 {
+  color: #411530;
+}
+
+.Location h1 {
+  color: #d36b00;
+}
+.Units {
+  color: #411530;
+  font-size: 15px;
+  text-align: left;
+}
+
+.Description {
+  display: block;
+  text-align: right;
+  color: #41153082;
+  font-size: 12px;
+  padding: 0;
+}
+.Definitions p {
+  text-align: right;
+  padding: 5px;
+  margin-left: 0px;
+}
+.Values p {
+  color: #41153082;
+  font-size: 15px;
+  text-align: left;
+  padding: 5px;
+  margin-left: 0px;
+}
+
+strong {
+  color: #41153082;
+  text-align: center !important;
+}
+
+a {
+  color: #411530;
+  text-decoration: none;
+}
