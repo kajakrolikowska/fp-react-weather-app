@@ -1,60 +1,65 @@
 import React from "react";
-import Search from "./Search";
+import axios from "axios";
+
 import "./Weather.css";
 
 export default function Weather() {
   return (
     <div className="WeatherAppWrap">
       <div className="Weather">
+        <form>
+          <div className="row SearchEngine">
+            <div className="col-9">
+              <input
+                type="search"
+                placeholder="🔍 What is the weather in..."
+                className="formControl"
+              />
+            </div>
+            <div className="col">
+              <button type="submit" className="checkBtn">
+                Check
+              </button>
+            </div>
+          </div>
+        </form>
+        <br />
         <ul className="Date">
           <li className="Day">Tuesday, 1 November 2022</li>
           <li className="Time">17:47</li>
         </ul>
         <br />
-        <Search />
-        <br />
         <div className="row">
-          <div className="col-8 Location noPadding">
+          <div className="col-6 Location">
             <h1>Berlin</h1>
           </div>
-          <div className="col-2 Temperature noPadding">
-            <h1>15</h1>
-          </div>
-          <div className="col-2 noPadding">
-            <h2 className="Units"> °C | °F</h2>
+          <div className="col-4 Temperature">
+            <span className="temp">15</span>
+            <span className="units">°C</span>
           </div>
           <div className="col-8 Description">
             <p>Clear sky</p>
           </div>
         </div>
+
+        <br />
+
         <hr />
         <div className="row">
-          <div className="col-4 Icon">
+          <div className="col-6 Icon">
             <img
-              src=" http://openweathermap.org/img/wn/10d@2x.png"
+              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png"
               alt="Clear sky"
             />
           </div>
-          <div className="col-4 Definitions">
+          <div className="col-6 Definitions">
             <ul>
-              <li>Max | Min</li>
-              <li>Feels like</li>
-              <li>Wind</li>
-              <li>Humidity</li>
-              <li>Pressure</li>
+              <li>Feels like: 15°C</li>
+              <li>Wind: 4 km/h</li>
+              <li>Humidity: 87%</li>
+              <li>Pressure: 1018 hPa</li>
             </ul>
             <br />
-          </div>
-          <div className="col-4 Values">
-            <ul>
-              <li>
-                18°C | <span className="Min">12°C</span>
-              </li>
-              <li>15°C</li>
-              <li>4 km/h</li>
-              <li>86%</li>
-              <li>1007 hPa</li>
-            </ul>
           </div>
           <hr />
         </div>
