@@ -5,19 +5,31 @@ export default function Weather() {
   return (
     <div className="WeatherAppWrap">
       <div className="Weather">
-        <ul>
-          <li>Tuesday, 1 November 2022</li>
-          <li>17:47</li>
+        <ul className="Date">
+          <li className="Day">Tuesday, 1 November 2022</li>
+          <li className="Time">17:47</li>
         </ul>
         <br />
         <form>
-          <input
-            type="search"
-            placeholder="🔍 What is the weather in..."
-            className="formControl"
-          />
-          <input type="submit" value="Check" />
-          <button type="button">📍</button>
+          <div className="row SearchEngine">
+            <div className="col-8">
+              <input
+                type="search"
+                placeholder="🔍 What is the weather in..."
+                className="formControl"
+              />
+            </div>
+            <div className="col-2">
+              <button type="submit" className="checkBtn">
+                Check
+              </button>
+            </div>
+            <div className="col-2">
+              <button type="button" className="locationBtn">
+                📍
+              </button>
+            </div>
+          </div>
         </form>
         <br />
         <div className="row">
@@ -27,15 +39,14 @@ export default function Weather() {
           <div className="col-2 Temperature noPadding">
             <h1>15</h1>
           </div>
-          <div className="col-2 Units noPadding">
-            <p> °C | °F</p>
+          <div className="col-2 noPadding">
+            <h2 className="Units"> °C | °F</h2>
           </div>
           <div className="col-8 Description">
             <p>Clear sky</p>
           </div>
         </div>
         <hr />
-        <br />
         <div className="row">
           <div className="col-4 Icon">
             <img
@@ -51,11 +62,12 @@ export default function Weather() {
               <li>Humidity</li>
               <li>Pressure</li>
             </ul>
+            <br />
           </div>
           <div className="col-4 Values">
             <ul>
               <li>
-                18°C | <span className="min">12°C</span>
+                18°C | <span className="Min">12°C</span>
               </li>
               <li>15°C</li>
               <li>4 km/h</li>
