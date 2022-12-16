@@ -13,43 +13,6 @@
   margin: 0 auto;
 }
 
-.formControl::placeholder {
-  color: #d36900b9;
-  opacity: 1;
-  font-size: 12px;
-}
-
-.checkBtn {
-  border-radius: 8px;
-  border: 1px solid #41153004;
-  color: #f1efdc;
-  font-size: 13px;
-  background: #4115304a;
-
-  box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.1);
-  transition: all 200ms ease-in-out;
-  cursor: pointer;
-}
-
-.checkBtn:hover {
-  background: #f1efdc87;
-  color: #4115304a;
-}
-
-.locationBtn {
-  border-radius: 8px;
-  border: 1px solid #41153004;
-  font-size: 13px;
-  background: #4115304a;
-
-  box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.1);
-  transition: all 200ms ease-in-out;
-  cursor: pointer;
-}
-
-.locationBtn:hover {
-  background: #f1efdc87;
-}
 .Units {
   color: #411530;
   font-size: 15px;

@@ -69,27 +69,6 @@ strong {
   text-align: center !important;
 }
 
-.formControl {
-  font-size: 14px;
-  line-height: 1;
-  border-color: #4115301c;
-  display: block;
-  width: 100%;
-  padding: 0.375rem 0.75rem;
-  border: 1px solid #ced4da;
-  border-radius: 0.375rem;
-}
-
-.formControl {
-  font-size: 14px;
-  line-height: 1;
-  border-color: #4115301c;
-}
-
-.SearchEngineng {
-  max-height: 45px;
-}
-
 footer {
   font-size: 12px;
 }

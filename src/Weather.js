@@ -1,4 +1,5 @@
 import React from "react";
+import Search from "./Search";
 import "./Weather.css";
 
 export default function Weather() {
@@ -10,27 +11,7 @@ export default function Weather() {
           <li className="Time">17:47</li>
         </ul>
         <br />
-        <form>
-          <div className="row SearchEngine">
-            <div className="col-8">
-              <input
-                type="search"
-                placeholder="🔍 What is the weather in..."
-                className="formControl"
-              />
-            </div>
-            <div className="col-2">
-              <button type="submit" className="checkBtn">
-                Check
-              </button>
-            </div>
-            <div className="col-2">
-              <button type="button" className="locationBtn">
-                📍
-              </button>
-            </div>
-          </div>
-        </form>
+        <Search />
         <br />
         <div className="row">
           <div className="col-8 Location noPadding">
