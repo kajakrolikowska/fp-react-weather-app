@@ -16,6 +16,7 @@ export default function Weather() {
                 className="formControl"
               />
             </div>
+
             <div className="col">
               <button type="submit" className="checkBtn">
                 Check
@@ -23,58 +24,56 @@ export default function Weather() {
             </div>
           </div>
         </form>
-        <br />
-        <ul className="Date">
-          <li className="Day">Tuesday, 1 November 2022</li>
-          <li className="Time">17:47</li>
-        </ul>
-        <br />
-        <div className="row">
+        <hr />
+
+        <div className="row WeatherInformation">
+          <div className="col-12">
+            <ul className="Date">
+              <li className="Day">Tuesday, 1 November 2022</li>
+              <li className="Time">17:47</li>
+            </ul>
+          </div>
           <div className="col-6 Location">
             <h1>Berlin</h1>
           </div>
-          <div className="col-4 Temperature">
-            <span className="temp">15</span>
-            <span className="units">°C</span>
-          </div>
-          <div className="col-8 Description">
-            <p>Clear sky</p>
-          </div>
-        </div>
-
-        <br />
-
-        <hr />
-        <div className="row">
-          <div className="col-6 Icon">
+          <div className="col-3 Icon">
             <img
               src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png"
               alt="Clear sky"
             />
           </div>
-          <div className="col-6 Definitions">
+          <div className="col-3 Temperature">
+            <span className="temp">15</span>
+            <span className="units">°C | °F</span>
+          </div>
+
+          <div className="col CurrentConditions">
             <ul>
+              <li>Clear sky</li>
               <li>Feels like: 15°C</li>
               <li>Wind: 4 km/h</li>
               <li>Humidity: 87%</li>
               <li>Pressure: 1018 hPa</li>
             </ul>
-            <br />
+            <hr />
           </div>
-          <hr />
         </div>
-        <div className="Forecast text-center">
+
+        <div className="row Forecast text-center">
           <strong>Forecast placeholder</strong>
         </div>
         <hr />
       </div>
       <footer>
-        This app was coded by Kaja Królikowska, and is open-sourced on{" "}
-        <a href="https://github.com/kajakrolikowska/fp-react-weather-app">
-          GitHub
-        </a>{" "}
-        and hosted on{" "}
-        <a href="https://tourmaline-lebkuchen-5df301.netlify.app/">Netlify</a>.
+        <strong>
+          This app was coded by Kaja Królikowska, and is open-sourced on{" "}
+          <a href="https://github.com/kajakrolikowska/fp-react-weather-app">
+            GitHub
+          </a>{" "}
+          and hosted on{" "}
+          <a href="https://tourmaline-lebkuchen-5df301.netlify.app/">Netlify</a>
+          .
+        </strong>
       </footer>
     </div>
   );

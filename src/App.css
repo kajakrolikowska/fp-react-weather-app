@@ -1,7 +1,27 @@
+:root {
+  --primary-color: #793b4a;
+  --secondary-color: #6e89b3;
+  --third-color: #f0dade;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
-  color: #41153082;
-  background-color: #41153028;
+  color: var(--primary-color);
+  background-image: url(./images/clouds.jpg);
+}
+.Weather {
+  max-width: 600px;
+  padding: 20px;
+  border: 1px solid var(--secondary-color);
+  border-radius: 10px;
+  margin-top: 30px;
+  background-color: white;
+}
+
+.WeatherAppWrap {
+  max-width: 600px;
+  display: block;
+  margin: 0 auto;
 }
 
 ul {
@@ -10,66 +30,65 @@ ul {
 }
 li {
   list-style-type: none;
-  color: #411530;
   font-size: 12px;
 }
 p {
-  color: #41153082;
-  line-height: 0.5;
+  color: var(--secondary-color);
+  line-height: 1.5;
   font-size: 14px;
+  margin: 0 auto;
 }
 
 a {
-  color: #d36b00;
+  color: var(--primary-color);
   text-decoration: none;
 }
 
 h1 {
-  font-size: 28px;
+  font-size: 35px;
   text-align: left;
-}
-.noPadding {
-  padding: 0;
-}
-.Temperature h1 {
-  color: #411530;
+  color: var(--secondary-color);
 }
 
-.Location h1 {
-  color: #d36b00;
+.Temperature {
+  display: table-cell;
+  width: 200ox;
+  height: 80px;
+  padding: 20px 12px;
+  vertical-align: middle;
+}
+
+.Location {
+  display: table-cell;
+  width: 200ox;
+  height: 80px;
+  padding: 20px 12px;
+  vertical-align: middle;
+}
+.Icon {
+  padding: 0;
 }
 .temp {
-  font-size: 40px;
+  font-size: 35px;
+  color: var(--secondary-color);
 }
 .units {
-  color: #411530;
+  color: var(--secondary-color);
   font-size: 15px;
   text-align: left;
   position: relative;
   top: -18px;
 }
 
-.Description {
-  display: block;
-  text-align: left;
-  color: #41153082;
-  font-size: 12px;
-}
-.Definitions p {
-  text-align: right;
-  padding: 5px;
-  margin-left: 0px;
-}
-.Values p {
-  color: #41153082;
-  font-size: 15px;
+.CurrentConditions {
   text-align: left;
   padding: 5px;
   margin-left: 0px;
+  color: var(--primary-color);
 }
 
 strong {
-  color: #41153082;
+  color: #845162;
   text-align: center !important;
 }
 
@@ -93,17 +112,17 @@ footer {
 }
 
 .formControl::placeholder {
-  color: #d36900b9;
+  color: var(--primary-color);
   opacity: 1;
   font-size: 12px;
 }
 
 .checkBtn {
   border-radius: 8px;
-  border: 1px solid #41153004;
-  color: #f1efdc;
+  border: 1px solid var(--third-color);
+  color: var(--third-color);
   font-size: 13px;
-  background: #4115304a;
+  background: var(--primary-color);
 
   box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.1);
   transition: all 200ms ease-in-out;
@@ -111,8 +130,8 @@ footer {
 }
 
 .checkBtn:hover {
-  background: #f1efdc87;
-  color: #4115304a;
+  background: var(--third-color);
+  color: var(--primary-color);
 }
 
 .locationBtn {
@@ -127,5 +146,12 @@ footer {
 }
 
 .locationBtn:hover {
-  background: #f1efdc87;
+  background: var(--third-color);
+}
+
+.Day,
+.Time {
+  color: var(--primary-color);
+  line-height: 1.5;
+  font-size: 14px;
 }
