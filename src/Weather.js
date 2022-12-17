@@ -1,30 +1,64 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 
 import "./Weather.css";
 
 export default function Weather() {
-  return (
-    <div className="WeatherAppWrap">
-      <div className="Weather">
-        <form>
-          <div className="row SearchEngine">
-            <div className="col-9">
-              <input
-                type="search"
-                placeholder="🔍 What is the weather in..."
-                className="formControl"
-              />
-            </div>
+  let [city, setCity] = useState(null);
+  let [conditions, setConditions] = useState(null);
+  let [load, setLoad] = useState(false);
 
-            <div className="col">
-              <button type="submit" className="checkBtn">
-                Check
-              </button>
-            </div>
-          </div>
-        </form>
+  function showConditions(response) {
+    setLoad(true);
+    setConditions({
+      city: setCity,
+      temperature: response.data.temperature.current,
+      description: response.data.condition.description,
+      feelslike: response.data.temperature.feels_like,
+      wind: response.data.wind.speed,
+      humidity: response.data.temperature.humidity,
+      pressure: response.data.temperature.pressure,
+      icon: `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`,
+    });
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    let apiKey = "aco5b5a5f063d77c9b366418et20e71f";
+    let url = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+    axios.get(url).then(showConditions);
+  }
+
+  function updateCity(event) {
+    setCity(event.target.value);
+  }
+
+  let form = (
+    <form onSubmit={handleSubmit}>
+      <div className="row SearchEngine">
+        <div className="col-9">
+          <input
+            type="search"
+            placeholder="🔍 What is the weather in..."
+            className="formControl"
+            onChange={updateCity}
+          />
+        </div>
+
+        <div className="col">
+          <button type="submit" className="checkBtn">
+            Check
+          </button>
+        </div>
+      </div>
+    </form>
+  );
+
+  if (load) {
+    return (
+      <div>
+        {form}
         <hr />
-
         <div className="row WeatherInformation">
           <div className="col-12">
             <ul className="Date">
@@ -33,26 +67,23 @@ export default function Weather() {
             </ul>
           </div>
           <div className="col-6 Location">
-            <h1>Berlin</h1>
+            <h1>{city}</h1>
           </div>
           <div className="col-3 Icon">
-            <img
-              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png"
-              alt="Clear sky"
-            />
+            <img src={conditions.icon} alt={conditions.description} />
           </div>
           <div className="col-3 Temperature">
-            <span className="temp">15</span>
+            <span className="temp">{Math.round(conditions.temperature)}</span>
             <span className="units">°C | °F</span>
           </div>
 
           <div className="col CurrentConditions">
             <ul>
-              <li>Clear sky</li>
-              <li>Feels like: 15°C</li>
-              <li>Wind: 4 km/h</li>
-              <li>Humidity: 87%</li>
-              <li>Pressure: 1018 hPa</li>
+              <li>Description: {conditions.description}</li>
+              <li>Feels like: {Math.round(conditions.feelslike)}°C</li>
+              <li>Wind: {Math.round(conditions.wind)} km/h</li>
+              <li>Humidity: {conditions.humidity}%</li>
+              <li>Pressure: {conditions.pressure} hPa</li>
             </ul>
             <hr />
           </div>
@@ -63,27 +94,8 @@ export default function Weather() {
         </div>
         <hr />
       </div>
-      <footer>
-        <strong>
-          This app was coded by Kaja Królikowska, and is open-sourced on{" "}
-          <a
-            href="https://github.com/kajakrolikowska/fp-react-weather-app"
-            target="_blank"
-            rel="noreferrer"
-          >
-            GitHub
-          </a>{" "}
-          and hosted on{" "}
-          <a
-            href="https://tourmaline-lebkuchen-5df301.netlify.app/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Netlify
-          </a>
-          .
-        </strong>
-      </footer>
-    </div>
-  );
+    );
+  } else {
+    return form;
+  }
 }
