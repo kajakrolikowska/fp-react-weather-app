@@ -1,17 +1,18 @@
 import React, { useState } from "react";
 import axios from "axios";
+import FormatedDate from "./FormatedDate";
 
 import "./Weather.css";
 
-export default function Weather() {
-  let [city, setCity] = useState(null);
+export default function Weather(props) {
+  let [city, setCity] = useState(props.defaultCity);
   let [conditions, setConditions] = useState(null);
   let [load, setLoad] = useState(false);
 
   function showConditions(response) {
     setLoad(true);
     setConditions({
-      city: setCity,
+      city: response.data.city,
       temperature: response.data.temperature.current,
       description: response.data.condition.description,
       feelslike: response.data.temperature.feels_like,
@@ -19,6 +20,7 @@ export default function Weather() {
       humidity: response.data.temperature.humidity,
       pressure: response.data.temperature.pressure,
       icon: `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`,
+      date: new Date(response.data.time * 1000),
     });
   }
 
@@ -59,12 +61,10 @@ export default function Weather() {
       <div>
         {form}
         <hr />
+
         <div className="row WeatherInformation">
           <div className="col-12">
-            <ul className="Date">
-              <li className="Day">Tuesday, 1 November 2022</li>
-              <li className="Time">17:47</li>
-            </ul>
+            <FormatedDate date={conditions.date} />
           </div>
           <div className="col-6 Location">
             <h1>{city}</h1>
