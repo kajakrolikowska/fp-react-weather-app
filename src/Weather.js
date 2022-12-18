@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import axios from "axios";
 import FormatedDate from "./FormatedDate";
 
-import "./Weather.css";
-
 export default function Weather(props) {
   let [city, setCity] = useState(props.defaultCity);
   let [conditions, setConditions] = useState(null);
@@ -23,12 +21,14 @@ export default function Weather(props) {
       date: new Date(response.data.time * 1000),
     });
   }
-
-  function handleSubmit(event) {
-    event.preventDefault();
+  function search() {
     let apiKey = "aco5b5a5f063d77c9b366418et20e71f";
     let url = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
     axios.get(url).then(showConditions);
+  }
+  function handleSubmit(event) {
+    event.preventDefault();
+    search(city);
   }
 
   function updateCity(event) {
@@ -96,6 +96,6 @@ export default function Weather(props) {
       </div>
     );
   } else {
-    return form;
+    search();
   }
 }
