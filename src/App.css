@@ -41,7 +41,7 @@ p {
 }
 
 a {
-  color: var(--secondary-color);
+  color: var(--primary-color);
   text-decoration: none;
 }
 
@@ -73,7 +73,7 @@ h1 {
   font-size: 35px;
   color: var(--secondary-color);
 }
-.units {
+.unit {
   color: var(--secondary-color);
   font-size: 15px;
   text-align: left;
