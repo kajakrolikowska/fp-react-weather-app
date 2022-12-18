@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import FormatedDate from "./FormatedDate";
+import WeatherInformation from "./WeatherInformation";
 
 export default function Weather(props) {
   let [city, setCity] = useState(props.defaultCity);
@@ -43,6 +43,7 @@ export default function Weather(props) {
             type="search"
             placeholder="🔍 What is the weather in..."
             className="formControl"
+            autoFocus="on"
             onChange={updateCity}
           />
         </div>
@@ -61,38 +62,14 @@ export default function Weather(props) {
       <div>
         {form}
         <hr />
-
-        <div className="row WeatherInformation">
-          <div className="col-12">
-            <FormatedDate date={conditions.date} />
-          </div>
-          <div className="col-6 Location">
-            <h1>{city}</h1>
-          </div>
-          <div className="col-3 Icon">
-            <img src={conditions.icon} alt={conditions.description} />
-          </div>
-          <div className="col-3 Temperature">
-            <span className="temp">{Math.round(conditions.temperature)}</span>
-            <span className="units">°C | °F</span>
-          </div>
-
-          <div className="col CurrentConditions">
-            <ul>
-              <li>Description: {conditions.description}</li>
-              <li>Feels like: {Math.round(conditions.feelslike)}°C</li>
-              <li>Wind: {Math.round(conditions.wind)} km/h</li>
-              <li>Humidity: {conditions.humidity}%</li>
-              <li>Pressure: {conditions.pressure} hPa</li>
-            </ul>
+        <WeatherInformation data={conditions} />
+        <hr />
+        <div className="row Forecasts">
+          <div className="col">
+            <p className="text-center">Forecasts placeholder</p>
             <hr />
           </div>
         </div>
-
-        <div className="row Forecast text-center">
-          <strong>Forecast placeholder</strong>
-        </div>
-        <hr />
       </div>
     );
   } else {
