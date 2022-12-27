@@ -18,7 +18,7 @@ export default function Temperature(props) {
         <span className="temp">{Math.round(props.celsius)}</span>
         <span className="unit">
           {" "}
-          °C |{" "}
+          °C{" "}
           <a href="/" onClick={convToF}>
             °F
           </a>
@@ -34,7 +34,7 @@ export default function Temperature(props) {
             {" "}
             °C{" "}
           </a>{" "}
-          | °F
+          °F
         </span>
       </div>
     );

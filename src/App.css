@@ -43,6 +43,7 @@ p {
 a {
   color: var(--primary-color);
   text-decoration: none;
+  font-weight: 400;
 }
 
 h1 {
@@ -79,6 +80,7 @@ h1 {
   text-align: left;
   position: relative;
   top: -18px;
+  font-weight: 700;
 }
 
 .CurrentConditions {
