@@ -19,7 +19,7 @@ export default function WeatherForecast(props) {
           Tue
           <div className="WeatherIcon">
             <img
-              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-night.png"
+              src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-night.png"
               alt="light rain"
               width="50"
             />
