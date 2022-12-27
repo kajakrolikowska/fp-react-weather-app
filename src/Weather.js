@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import WeatherInformation from "./WeatherInformation";
+import WeatherForecast from "./WeatherForecast";
 
 export default function Weather(props) {
   let [city, setCity] = useState(props.defaultCity);
@@ -64,12 +65,7 @@ export default function Weather(props) {
         <hr />
         <WeatherInformation data={conditions} />
         <hr />
-        <div className="row Forecasts">
-          <div className="col">
-            <p className="text-center">Forecasts placeholder</p>
-            <hr />
-          </div>
-        </div>
+        <WeatherForecast />
       </div>
     );
   } else {

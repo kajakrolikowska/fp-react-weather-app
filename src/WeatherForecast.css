@@ -1,0 +1,9 @@
+.WeatherForecast {
+  text-align: center;
+  color: var(--primary-color);
+  font-size: 12px;
+}
+
+.DailyTempMin {
+  opacity: 0.6;
+}
