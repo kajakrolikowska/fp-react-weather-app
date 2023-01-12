@@ -9,7 +9,7 @@ export default function ForecastDay(props) {
     return day;
   }
   return (
-    <div className="text-center">
+    <div>
       <span className="WeekDay">{day()}</span>
       <div className="WeatherIcon">
         <img
