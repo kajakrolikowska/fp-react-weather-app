@@ -31,7 +31,6 @@ ul {
 li {
   list-style-type: none;
   font-size: 12px;
-  text-transform: capitalize;
 }
 p {
   color: var(--secondary-color);
@@ -54,7 +53,6 @@ h1 {
 
 .Temperature {
   display: table-cell;
-  width: 200ox;
   height: 80px;
   padding: 20px 12px;
   vertical-align: middle;
@@ -62,7 +60,6 @@ h1 {
 
 .Location {
   display: table-cell;
-  width: 200ox;
   height: 80px;
   padding: 20px 12px;
   vertical-align: middle;
